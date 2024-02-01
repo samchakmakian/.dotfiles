@@ -25,7 +25,7 @@
     },
     "tray": {
         // "icon-size": 22,
-        "spacing": 10
+        "spacing": 8
     },
     "clock": {
         // "timezone": "America/New_York",
@@ -102,8 +102,8 @@
             "default": "🎜"
         },
     "custom/packages": {
-        "exec": "~/.local/bin/packagecount",
-	"format": "{}",
+	"format": " {}",
+        "exec": "$HOME/bin/packagecount",
 	"interval": 45
 	},
         "escape": true,
