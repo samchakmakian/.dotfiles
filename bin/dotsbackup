@@ -26,14 +26,14 @@ function dotpush () {
 }
 
 # Grab date
-#BACKUPDATE='date +%b-%d-%y'
+BACKUPDATE='date +%b-%d-%y'
 
 echo 'Adding dotfiles...'
 dotadd $DOTPATHS
 sleep 1
 
 echo 'Committing...'
-dotcommit
+dotcommit $BACKUPDATE
 sleep 1
 
 echo 'Pushing...'
