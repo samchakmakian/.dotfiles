@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Fix For Multiple Monitors When Using This Script For Modules
+# SLPTM=$( echo $RANDOM | cut -b 1 )
+# sleep $SLPTM
+
+# checkupdates is provided by pacman-contrib
+checkupdates | wc -l

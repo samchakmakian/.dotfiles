@@ -30,3 +30,34 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 export PATH="$HOME/bin:$PATH"
+
+# Function to open a terminal app but close the terminal window
+openclose() {
+    "$@" &
+    disown
+    exit
+}
+
+
+# Pomodoro function in CLI
+# Requires https://github.com/caarlos0/timer to be installed. spd-say should ship with your distro
+
+declare -A pomo_options
+pomo_options["work"]="25"
+pomo_options["break"]="5"
+pomo_options["long break"]="15"
+
+pomodoro () {
+  if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
+  val=$1
+  echo $val | lolcat
+  timer ${pomo_options["$val"]}m
+  spd-say "'$val' session done"
+  fi
+}
+
+alias wo="pomodoro 'work'"
+alias br="pomodoro 'break'"
+alias lb="pomodoro 'long break'"
+
+# End of pomodoro function
