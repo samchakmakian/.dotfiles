@@ -1,5 +1,17 @@
 #!/bin/bash
 
+# Add all desired dotfiles paths to git repo
+DOTPATHS='
+bin
+.bashrc
+.config/hypr
+.config/waybar
+.config/swayidle
+.config/swaylock
+.config/wofi
+.config/kitty
+.config/wlogout'
+
 # Functions to add, commit and push backups
 function dotadd () {
     /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME add $1
@@ -15,18 +27,6 @@ function dotpush () {
 
 # Grab date
 BACKUPDATE='date +%b-%d-%y'
-
-# Add all desired dotfiles paths to git repo
-DOTPATHS='
-bin
-.bashrc
-.config/hypr
-.config/waybar
-.config/swayidle
-.config/swaylock
-.config/wofi
-.config/kitty
-.config/wlogout'
 
 echo 'Adding dotfiles...'
 dotadd $DOTPATHS
