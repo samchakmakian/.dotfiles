@@ -18,7 +18,7 @@ function dotadd () {
 }
 
 function dotcommit () {
-    /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME commit -m "Updated '$1'"
+    /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME commit -m "Updated 'date +%b-%d-%y'"
 }
 
 function dotpush () {
@@ -26,14 +26,14 @@ function dotpush () {
 }
 
 # Grab date
-BACKUPDATE='date +%b-%d-%y'
+#BACKUPDATE='date +%b-%d-%y'
 
 echo 'Adding dotfiles...'
 dotadd $DOTPATHS
 sleep 1
 
 echo 'Committing...'
-dotcommit $BACKUPDATE
+dotcommit
 sleep 1
 
 echo 'Pushing...'
