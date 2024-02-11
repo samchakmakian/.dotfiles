@@ -35,7 +35,7 @@ dotadd $DOTPATHS
 sleep 1
 
 echo 'Committing...'
-dotcommit $backupdate
+dotcommit
 sleep 1
 
 echo 'Pushing...'
