@@ -1,16 +1,17 @@
 #!/bin/bash
 
-# Add all desired dotfiles paths to git repo
-DOTPATHS='
-bin
-.bashrc
-.config/hypr
-.config/kitty
-.config/swayidle
-.config/swaylock
-.config/waybar
-.config/wofi
-.config/wlogout'
+# Add all desired dotfiles paths to git repo here
+declare -a dotpaths=(
+"bin"
+".bashrc"
+".config/hypr"
+".config/kitty"
+".config/swayidle"
+".config/swaylock"
+".config/waybar"
+".config/wofi"
+".config/wlogout"
+)
 
 # Functions to add, commit and push backups
 function dotadd () {
@@ -31,7 +32,13 @@ todaysdate=$(date +"%m-%d-%Y")
 backupdate+=($todaysdate)
 
 echo 'Adding dotfiles...'
-dotadd $DOTPATHS
+sleep .5
+for i in "${!dotpaths[@]}"
+do
+    counter=$((i+1))
+    echo "Adding ${dotpaths[$i]} (item $counter of "${#dotpaths[@]}")"
+    dotadd ${dotpaths[$i]}
+done
 sleep 1
 
 echo 'Committing...'
@@ -40,4 +47,6 @@ sleep 1
 
 echo 'Pushing...'
 dotpush
+
+echo 'Backup complete!'
 
