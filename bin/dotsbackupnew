@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Grab date
+$backupdate=()
+todaysdate=$(date +"%m-%d-%Y")
+backupdate+=($todaysdate)
+
 # Add all desired dotfiles paths to git repo here
 declare -a dotpaths=(
 	"bin"
@@ -25,11 +30,6 @@ function dotcommit () {
 function dotpush () {
     /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME push -u origin main
 }
-
-# Grab date
-$backupdate=()
-todaysdate=$(date +"%m-%d-%Y")
-backupdate+=($todaysdate)
 
 echo 'Adding dotfiles...'
 sleep .5
