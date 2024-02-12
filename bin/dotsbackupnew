@@ -10,7 +10,7 @@ declare -a dotpaths=(
 ".config/swaylock"
 ".config/waybar"
 ".config/wofi"
-".config/.wlogout"
+".config/wlogout"
 )
 
 # Functions to add, commit and push backups
