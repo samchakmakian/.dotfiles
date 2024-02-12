@@ -5,11 +5,11 @@ DOTPATHS='
 bin
 .bashrc
 .config/hypr
-.config/waybar
+.config/kitty
 .config/swayidle
 .config/swaylock
+.config/waybar
 .config/wofi
-.config/kitty
 .config/wlogout'
 
 # Functions to add, commit and push backups
