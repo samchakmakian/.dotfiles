@@ -4,6 +4,7 @@
 declare -a dotpaths=(
 "bin"
 ".bashrc"
+".nanorc"
 ".config/hypr"
 ".config/kitty"
 ".config/swayidle"
