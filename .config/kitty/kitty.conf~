@@ -1,9 +1,4 @@
-############################################################
-SAMIG'S KITTY CONFIG
-############################################################
 # vim:fileencoding=utf-8:foldmethod=marker
-
-include ./theme.conf
 
 #: Fonts {{{
 
@@ -11,10 +6,10 @@ include ./theme.conf
 #: individual font faces and even specify special fonts for particular
 #: characters.
 
- font_family      Iosevka
- bold_font        Iosevka Bold
- italic_font      Iosevka Italic
- bold_italic_font Iosevka Bold Italic
+# font_family      monospace
+# bold_font        auto
+# italic_font      auto
+# bold_italic_font auto
 
 #: You can specify different fonts for the bold/italic/bold-italic
 #: variants. To get a full list of supported fonts use the `kitty
@@ -29,7 +24,7 @@ include ./theme.conf
 #:     italic_font      Operator Mono Book Italic
 #:     bold_italic_font Operator Mono Medium Italic
 
- font_size 16.0
+# font_size 11.0
 
 #: Font size (in pts)
 
@@ -306,7 +301,7 @@ include ./theme.conf
 
 #: Scrollback {{{
 
- scrollback_lines 2000
+# scrollback_lines 2000
 
 #: Number of lines of history to keep in memory for scrolling back.
 #: Memory is allocated on demand. Negative numbers are (effectively)
@@ -478,7 +473,7 @@ include ./theme.conf
 #:     the kitty config directory on the pasted text. The text returned by the
 #:     function will be actually pasted.
 
- strip_trailing_spaces smart
+# strip_trailing_spaces never
 
 #: Remove spaces at the end of lines when copying to clipboard. A
 #: value of smart will do it when using normal selections, but not
@@ -718,7 +713,7 @@ include ./theme.conf
 
 #: Terminal bell {{{
 
- enable_audio_bell yes
+# enable_audio_bell yes
 
 #: The audio bell. Useful to disable it in environments that require
 #: silence.
@@ -1124,7 +1119,7 @@ include ./theme.conf
 
 #: The foreground and background colors.
 
- background_opacity 0.8
+# background_opacity 1.0
 
 #: The opacity of the background. A number between zero and one, where
 #: one is opaque and zero is fully transparent. This will only work if
@@ -1148,7 +1143,7 @@ include ./theme.conf
 #: this option when reloading the config will only work if
 #: dynamic_background_opacity was enabled in the original config.
 
- background_blur 8
+# background_blur 0
 
 #: Set to a positive value to enable background blur (blurring of the
 #: visuals behind a transparent window) on platforms that support it.
@@ -1357,7 +1352,7 @@ include ./theme.conf
 #: See rc_custom_auth <https://sw.kovidgoyal.net/kitty/remote-
 #: control/#rc-custom-auth> for details.
 
- allow_remote_control yes
+# allow_remote_control no
 
 #: Allow other programs to control kitty. If you turn this on, other
 #: programs can control all aspects of kitty, including sending text
@@ -2456,9 +2451,3 @@ include ./theme.conf
 #: }}}
 
 #: }}}
-
-
-# BEGIN_KITTY_THEME
-# Spacedust
-include current-theme.conf
-# END_KITTY_THEME

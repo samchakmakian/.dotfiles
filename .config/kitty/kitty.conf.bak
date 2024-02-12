@@ -1,6 +1,3 @@
-############################################################
-SAMIG'S KITTY CONFIG
-############################################################
 # vim:fileencoding=utf-8:foldmethod=marker
 
 include ./theme.conf
@@ -478,7 +475,7 @@ include ./theme.conf
 #:     the kitty config directory on the pasted text. The text returned by the
 #:     function will be actually pasted.
 
- strip_trailing_spaces smart
+# strip_trailing_spaces never
 
 #: Remove spaces at the end of lines when copying to clipboard. A
 #: value of smart will do it when using normal selections, but not
@@ -1148,7 +1145,7 @@ include ./theme.conf
 #: this option when reloading the config will only work if
 #: dynamic_background_opacity was enabled in the original config.
 
- background_blur 8
+ background_blur 10
 
 #: Set to a positive value to enable background blur (blurring of the
 #: visuals behind a transparent window) on platforms that support it.
@@ -2459,6 +2456,6 @@ include ./theme.conf
 
 
 # BEGIN_KITTY_THEME
-# Spacedust
+# Arthur
 include current-theme.conf
 # END_KITTY_THEME

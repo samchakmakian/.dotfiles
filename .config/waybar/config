@@ -3,9 +3,9 @@
     "position": "top",
     "spacing": 5,
     
-    "modules-left": ["custom/packages", "hyprland/workspaces", "tray"],
-    "modules-center": [],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "battery", "clock"],
+    "modules-left": ["hyprland/workspaces", "tray"],
+    "modules-center": [ ],
+    "modules-right": ["custom/packages", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "battery", "clock"],
     
     "hyprland/workspaces": {
 	"all-outputs": true,
@@ -24,7 +24,7 @@
         }
     },
     "tray": {
-        // "icon-size": 22,
+        // "icon-size": 25,
         "spacing": 8
     },
     "clock": {
@@ -77,8 +77,8 @@
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{icon} {volume}%",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-bluetooth-muted": " {icon}",
         "format-muted": "",
         "format-source": "{volume}% ",
         "format-source-muted": "",
@@ -102,8 +102,8 @@
             "default": "🎜"
         },
     "custom/packages": {
+        "exec": "~/bin/packagecount",
 	"format": " {}",
-        "exec": "$HOME/bin/packagecount",
 	"interval": 45
 	},
         "escape": true,

@@ -1,6 +1,6 @@
 indicator
 ignore-empty-password
-indicator-thickness=7
+indicator-thickness=6
 indicator-radius=140
 image= "$HOME/Pictures/wallpaper-1.jpg"
 clock

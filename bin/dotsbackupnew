@@ -1,22 +1,17 @@
 #!/bin/bash
 
-# Grab date
-$backupdate=()
-todaysdate=$(date +"%m-%d-%Y")
-backupdate+=($todaysdate)
-
 # Add all desired dotfiles paths to git repo here
 declare -a dotpaths=(
-	"bin"
-	".bashrc"
-	".config/hypr"
-	".config/kitty"
-	".config/swayidle"
-	".config/swaylock"
-	".config/waybar"
-	".config/wofi"
-	".config.wlogout"
-	)
+"bin"
+".bashrc"
+".config/hypr"
+".config/kitty"
+".config/swayidle"
+".config/swaylock"
+".config/waybar"
+".config/wofi"
+".config.wlogout"
+)
 
 # Functions to add, commit and push backups
 function dotadd () {
@@ -30,6 +25,11 @@ function dotcommit () {
 function dotpush () {
     /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME push -u origin main
 }
+
+# Grab date
+backupdate=()
+todaysdate=$(date +"%m-%d-%Y")
+backupdate+=($todaysdate)
 
 echo 'Adding dotfiles...'
 sleep .5
@@ -49,3 +49,4 @@ echo 'Pushing...'
 dotpush
 
 echo 'Backup complete!'
+

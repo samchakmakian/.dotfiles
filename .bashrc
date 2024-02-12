@@ -40,7 +40,6 @@ openclose() {
 
 
 # Pomodoro function in CLI
-# Requires https://github.com/caarlos0/timer to be installed. spd-say should ship with your distro
 
 declare -A pomo_options
 pomo_options["work"]="25"
