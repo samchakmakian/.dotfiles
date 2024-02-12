@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Add all desired dotfiles paths to git repo
+declare -a dotpaths=(
+        "bin"
+        ".bashrc"
+        ".config/hypr"
+        ".config/kitty"
+        ".config/swayidle"
+        ".config/swaylock"
+        ".config/waybar"
+        ".config/wofi"
+        ".config.wlogout"
+        )
+
+function dotadd () {
+	echo "/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME add $1"
+}
+
+for i in "${!dotpaths[@]}"
+do
+    counter=$((i+1))
+    echo "Adding ${dotpaths[$i]} (item $counter of "${#dotpaths[@]}")"
+    dotadd ${dotpaths[$i]}
+done
+sleep 1
