@@ -1,6 +1,5 @@
-
 ########################################################################################
-SAMIG'S HYPR CONFIG
+SAMIG'S HYPRLAND CONFIG
 In case of emergency, use the config located in the repo  /examples/hypr.conf and edit it
 ########################################################################################
 
@@ -124,6 +123,7 @@ bind = $mainMod, O, exec, obsidian
 bind = $mainMod, I, exec, firefox
 bind = $mainMod, Escape, exec, wlogout
 bind = , XF86Tools, exec, emacs ~/.config/hypr/hyprland.conf
+bind = $mainMod SHIFT, W, exec, $HOME/bin/wayreload
 
 # Move focus with mainMod + arrow keys
 bind = $mainMod, left, movefocus, l

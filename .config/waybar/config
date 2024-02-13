@@ -2,11 +2,11 @@
     "layer": "top",
     "position": "top",
     "spacing": 5,
-    
+
     "modules-left": ["custom/packages", "hyprland/workspaces", "tray"],
     "modules-center": ["clock"],
     "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "battery", "custom/power"],
-    
+
     "hyprland/workspaces": {
 	"all-outputs": true,
 	"format-window-seperator": " |",
@@ -44,7 +44,8 @@
         "critical-threshold": 80,
         // "format-critical": "{icon} {temperatureC}°C",
         "format": "{icon} {temperatureC}°C",
-        "format-icons": ["", "", ""]
+        "format-icons": ["", "", ""],
+	"tooltip": false
     },
     "battery": {
         "states": {
@@ -53,7 +54,7 @@
             "critical": 15
         },
         "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
+        "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
         // "format-good": "",
@@ -62,11 +63,11 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": " ({signalStrength}%)",
+        "format-wifi": " ({signalStrength}%)",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "⚠  Discon",
-        "format-alt": " {essid}"
+        "format-alt": " {essid}"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -91,10 +92,12 @@
         "exec": "~/bin/packagecount",
 	"on-click": "~/bin/wayupgrade",
 	"format": " {}",
-	"interval": 45
+	"interval": 45,
+	"tooltip": false
     },
     "custom/power": {
         "on-click": "wlogout",
-	"format": " "
-    } 
+	"format": " ",
+	"tooltip": false
+    }
 }
