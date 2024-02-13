@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "Perform full system upgrade?"
+select yn in "Yes" "No"; do
+    case $yn in
+	Yes ) sudo pacman -Syu; break;;
+	No ) echo "Exiting in 5 seconds..."; sleep 5; exit;;
+    esac
+done
+echo "Exiting in 5 seconds..."
+sleep 5

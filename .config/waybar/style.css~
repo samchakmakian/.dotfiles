@@ -75,18 +75,26 @@ button:hover {
 #battery,
 #cpu,
 #memory,
+#disk,
 #temperature,
+#backlight,
 #network,
 #pulseaudio,
+#wireplumber,
+#custom-media,
 #custom-packages,
 #tray,
 #mode,
 #idle_inhibitor,
-#custom-power,
+#scratchpad,
+#mpd {
+    padding: 0 10px;
+    color: #ffffff;
+}
+
 #window,
 #workspaces {
-    margin-left: 1px;
-    margin-right: 3px;
+    margin: 0 4px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -100,10 +108,7 @@ button:hover {
 }
 
 #clock {
-    background: rgba(0, 100, 100, 0.6);
-    border-radius: 15px;
-    padding: 1px 5px;
-    margin: 5px;
+    background-color: transparent;
 }
 
 #battery {
@@ -146,25 +151,53 @@ label:focus {
     background-color: transparent;
 }
 
+#disk {
+    background-color: #964B00;
+}
+
+#backlight {
+    background-color: #90b1b1;
+}
+
 #network {
     background-color: transparent;
 }
 
 #network.disconnected {
-    background-color: rgba(250, 0, 0, 0.5);
+    background-color: #f53c3c;
 }
 
 #pulseaudio {
     background-color: transparent;
     color: #FFFFFF;
-    padding: 0px 5px;
 }
 
 #pulseaudio.muted {
-    background-color: rgba(200, 0, 0, 0.4);
+    background-color: rgba(200, 0, 0, 0.3);
     color: #FFFFFF;
-    border-radius: 10px;
-    padding: 0px 5px;
+}
+
+#wireplumber {
+    background-color: #fff0f5;
+    color: #000000;
+}
+
+#wireplumber.muted {
+    background-color: #f53c3c;
+}
+
+#custom-media {
+    background-color: #66cc99;
+    color: #2a5c45;
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+    background-color: #66cc99;
+}
+
+#custom-media.custom-vlc {
+    background-color: #ffa000;
 }
 
 #temperature {
@@ -190,26 +223,65 @@ label:focus {
 
 #idle_inhibitor {
     background-color: transparent;
-    padding: 0px 3px;
 }
 
 #idle_inhibitor.activated {
     background-color: rgba(236, 240, 241, 0.3);
-    color: #ffffff;
-    border-radius: 10px;
-    padding: 0px 3px;
+    color: #FFFFFF;
 }
 
+#mpd {
+    background-color: #66cc99;
+    color: #2a5c45;
+}
+
+#mpd.disconnected {
+    background-color: #f53c3c;
+}
+
+#mpd.stopped {
+    background-color: #90b1b1;
+}
+
+#mpd.paused {
+    background-color: #51a37a;
+}
+
+#language {
+    background: #00b093;
+    color: #740864;
+    padding: 0 5px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state {
+    background: #97e1ad;
+    color: #000000;
+    padding: 0 0px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state > label {
+    padding: 0 5px;
+}
+
+#keyboard-state > label.locked {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad.empty {
+	background-color: transparent;
+}
 #custom-packages {
-    color: #15161e; 
-    background: rgba(247, 118, 142, 0.7);
+    color: #15161e;
+    background: #f7768e;
     border-radius: 15px;
-    padding: 2px 8px;
-    margin: 3px;
-}
-
-#custom-power {
-    color: #ffffff;
-    background-color: transparent;
-    margin: 3px;
+    margin: 5px;
+    padding: 2px 10px;
 }

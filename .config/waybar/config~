@@ -3,9 +3,9 @@
     "position": "top",
     "spacing": 5,
     
-    "modules-left": ["custom/packages", "hyprland/workspaces", "tray"],
-    "modules-center": ["clock"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "battery", "custom/power"],
+    "modules-left": ["hyprland/workspaces", "tray"],
+    "modules-center": [ ],
+    "modules-right": ["custom/packages", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "battery", "clock"],
     
     "hyprland/workspaces": {
 	"all-outputs": true,
@@ -45,6 +45,12 @@
         // "format-critical": "{icon} {temperatureC}°C",
         "format": "{icon} {temperatureC}°C",
         "format-icons": ["", "", ""]
+    },
+
+"backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
     "battery": {
         "states": {
@@ -87,14 +93,22 @@
         },
         "on-click": "pamixer -t"
     },
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
     "custom/packages": {
         "exec": "~/bin/packagecount",
-	"on-click": "~/bin/wayupgrade",
 	"format": " {}",
 	"interval": 45
-    },
-    "custom/power": {
-        "on-click": "wlogout",
-	"format": " "
-    } 
+	},
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    }
 }
+
