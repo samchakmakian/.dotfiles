@@ -2,11 +2,11 @@
     "layer": "top",
     "position": "top",
     "spacing": 5,
-    
-    "modules-left": ["hyprland/workspaces", "tray"],
-    "modules-center": [ ],
-    "modules-right": ["custom/packages", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "battery", "clock"],
-    
+
+    "modules-left": ["custom/packages", "hyprland/workspaces", "tray"],
+    "modules-center": ["clock"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "battery", "custom/power"],
+
     "hyprland/workspaces": {
 	"all-outputs": true,
 	"format-window-seperator": " |",
@@ -41,16 +41,11 @@
     "temperature": {
         // "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
+n        "critical-threshold": 80,
         // "format-critical": "{icon} {temperatureC}°C",
         "format": "{icon} {temperatureC}°C",
-        "format-icons": ["", "", ""]
-    },
-
-"backlight": {
-        // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format-icons": ["", "", ""],
+	"tooltip": false
     },
     "battery": {
         "states": {
@@ -59,7 +54,7 @@
             "critical": 15
         },
         "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
+        "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
         // "format-good": "",
@@ -68,11 +63,11 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": " ({signalStrength}%)",
+        "format-wifi": " ({signalStrength}%)",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "⚠  Discon",
-        "format-alt": " {essid}"
+        "format-alt": " {essid}"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -93,22 +88,16 @@
         },
         "on-click": "pamixer -t"
     },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
     "custom/packages": {
         "exec": "~/bin/packagecount",
+	"on-click": "~/bin/wayupgrade",
 	"format": " {}",
-	"interval": 45
-	},
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+	"interval": 45,
+	"tooltip": false
+    },
+    "custom/power": {
+        "on-click": "wlogout",
+	"format": " ",
+	"tooltip": false
     }
 }
-
