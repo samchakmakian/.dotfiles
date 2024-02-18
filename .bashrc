@@ -60,3 +60,5 @@ alias br="pomodoro 'break'"
 alias lb="pomodoro 'long break'"
 
 # End of pomodoro function
+
+eval "$(zoxide init bash)"
