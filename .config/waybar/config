@@ -29,7 +29,7 @@
     },
     "clock": {
         // "timezone": "America/New_York",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%m-%d-%Y}"
     },
     "cpu": {
         "format": " {usage}%",
