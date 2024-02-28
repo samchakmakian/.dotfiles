@@ -10,6 +10,7 @@ eval "$(thefuck --alias)"
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias mediassh='ssh -p 49101 sam@samig.damustr8babygurl.com'
 
 PS1='\w] >> '
 PS2='>>> '
