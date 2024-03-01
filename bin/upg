@@ -1,11 +1,20 @@
 #!/bin/bash
 
+function countdown () {
+    secs=$(($1))
+	while [ $secs -gt 0 ]; do
+   	echo -ne "Exiting in $secs\033[0K\r"
+   	sleep 1
+   	: $((secs--))
+    done
+}
+
 echo "Perform full system upgrade?"
 select yn in "Yes" "No"; do
     case $yn in
 	Yes ) sudo pacman -Syu; break;;
-	No ) echo "Exiting in 5 seconds..."; sleep 5; exit;;
+	No ) countdown 3; exit;;
     esac
 done
-echo "Exiting in 5 seconds..."
-sleep 5
+
+countdown 10
