@@ -1,14 +1,16 @@
 indicator
 ignore-empty-password
-indicator-thickness=6
+indicator-thickness=10
 indicator-radius=140
+indicator-y-position=558
 image= "$HOME/.config/hypr/wallpapers/wallpaper-3.png"
 clock
-effect-blur=7x5
+effect-blur=6x4
 effect-vignette=0.5:0.5
-ring-color=bb00cc
-key-hl-color=880033
-line-color=00000000
+ring-color=663026
+key-hl-color=DE822D
+line-color=783529
 inside-color=111111BB
 separator-color=00000000
-
+text-color=EBB332
+line-uses-ring
