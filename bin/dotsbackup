@@ -27,6 +27,8 @@ function dotpush () {
     /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME push -u origin main
 }
 
+cd
+
 # Grab date
 backupdate=()
 todaysdate=$(date +"%m-%d-%Y")
