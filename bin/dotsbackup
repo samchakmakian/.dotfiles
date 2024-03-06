@@ -34,7 +34,7 @@ backupdate=()
 todaysdate=$(date +"%m-%d-%Y")
 backupdate+=($todaysdate)
 
-echo 'Adding dotfiles...'
+echo '\nAdding dotfiles...'
 sleep .5
 for i in "${!dotpaths[@]}"
 do
@@ -44,12 +44,12 @@ do
 done
 sleep 1
 
-echo 'Committing...'
+echo '\nCommitting...'
 dotcommit
 sleep 1
 
-echo 'Pushing...'
+echo '\nPushing...'
 dotpush
 
-echo 'Backup complete!'
+echo '\nBackup complete!'
 
