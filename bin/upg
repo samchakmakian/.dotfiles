@@ -9,7 +9,7 @@ function countdown () {
     done
 }
 
-echo "Perform full system upgrade?"
+echo -e "Perform full system upgrade?\nIt is recommended you check https://archlinux.org/ first to avoid instability."
 select yn in "Yes" "No"; do
     case $yn in
 	Yes ) sudo pacman -Syu; break;;
