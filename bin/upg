@@ -13,7 +13,15 @@ echo -e "Perform full system upgrade?\nIt is recommended you check https://archl
 select yn in "Yes" "No"; do
     case $yn in
 	Yes ) sudo pacman -Syu; break;;
-	No ) countdown 3; exit;;
+	No ) break;;
+    esac
+done
+
+echo -e "Perform yay package upgrades?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) yay -Syu; break;;
+        No ) countdown 3; exit;;
     esac
 done
 
