@@ -17,7 +17,7 @@ select yn in "Yes" "No"; do
     esac
 done
 
-echo -e "Perform yay package upgrades?"
+echo -e "\nPerform yay package upgrades?"
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) yay -Syu; break;;
