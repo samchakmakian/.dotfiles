@@ -39,8 +39,9 @@ openclose() {
     exit
 }
 
-
-# Pomodoro function in CLI
+############################
+# Pomodoro function in CLI #
+############################
 
 declare -A pomo_options
 pomo_options["work"]="25"
@@ -60,6 +61,8 @@ alias wo="pomodoro 'work'"
 alias br="pomodoro 'break'"
 alias lb="pomodoro 'long break'"
 
-# End of pomodoro function
+############################
+# End of pomodoro function #
+############################
 
 eval "$(zoxide init bash)"
