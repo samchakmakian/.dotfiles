@@ -35,7 +35,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.local/share/applications:$PATH"
 
 # Function to open a terminal app but close the terminal window
 openclose() {

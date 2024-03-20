@@ -1,0 +1,9 @@
+#!/bin/bash
+openclose() {
+    "$@" &
+    disown
+    exit
+}
+
+source ~/anaconda3/bin/activate
+openclose anaconda-navigator

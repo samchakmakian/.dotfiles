@@ -31,12 +31,7 @@ input {
 	disable_while_typing = no
     }
 
-    sensitivity = 0.3 # -1.0 - 1.0, 0 means no modification.
-}
-
-device {
-    name = tpps/2-ibm-trackpoint
-    sensitivity = 0.2
+    sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
 }
 
 general {
@@ -98,6 +93,11 @@ misc {
     disable_hyprland_logo = true
     mouse_move_enables_dpms = true
     key_press_enables_dpms = true
+}
+
+device {
+    name = synaptics-tm3276-022
+    sensitivity= 0
 }
 
 # Example windowrule v1
